@@ -1,3 +1,10 @@
-# Challenge da Sprint 4
+# Challenge da Sprint 4 - Compass.uol
 
-### Resolução dos Exercícios da Sprint 4 - Compass.uol
+## Sobre o Projeto
+Resolução das atividades com Python.
+## Tecnologias Utilizadas
+### Ferramentas
+- Visual Studio Code
+- GitHub
+### Linguagem
+- Python 3
