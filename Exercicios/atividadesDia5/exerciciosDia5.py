@@ -69,9 +69,74 @@ print('-------------------------')
 def questao7():
     x = int(input('Digite um valor inteiro: '))
     y = int(input('Digite um valor inteiro: '))
+    soma7 = 0
+    media7 = 0
     soma7 = x + y
     media7 = (soma7)/2
     return(media7)
 print(questao7())   
 print('-------------------------')
     
+# # 8-
+def questao8():
+    X = int(input('Digite um valor inteiro: '))
+    valor = X%2
+    resposta = 0
+    resultado = 1
+    if valor == 0:
+        print("O número é par, seu fatorial é: ")
+        for i in range(1,X+1):
+            resultado *=i
+            fatorial = resultado
+        print(fatorial)
+    else:
+        print("O número é ímpar, sua tabuada é: ")
+        for i in range(1,11):
+            resposta = i * X
+            print(i, ' x ', X, ' = ', resposta)
+questao8()
+print('-------------------------')
+
+# 9- 
+def questao9():
+    tamanho = 15
+    X = []
+    for i in range(0,tamanho):
+        valorDigitado = int(input('Digite um valor: '))
+        X.append(valorDigitado)
+        i +=1
+    newX = X[::-1]
+    return print(newX)        
+questao9()
+print('-------------------------')   
+
+# 10-
+def questao10():
+    tamanhoCesta = 3
+    cesta = []
+    lista = ["maça", "banana", "pera"]
+    for i in range(tamanhoCesta):
+        cesta.append(input('Digite uma fruta:'))
+    for i in cesta:
+        for j in lista:
+            if i==j:
+                print('Tem ', i)
+    return print(cesta)
+questao10()
+print('-------------------------')
+
+# 11-
+def tempoJogo():
+    horaInicial = int(input('Início do jogo: '))
+    horaFinal = int(input('Hora que o jogo terminou: '))
+    duracao = 0
+    if horaFinal > horaInicial:
+        duracao = horaFinal - horaInicial
+        print('O JOGO DUROU ', duracao, ' HORA(S)')
+    else:
+        convTempo = horaFinal + 24
+        duracao = convTempo - horaInicial
+        print('O JOGO DUROU ', duracao, ' HORA(S)')
+    return
+tempoJogo()
+print('-------------------------')
