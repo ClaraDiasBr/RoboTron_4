@@ -7,5 +7,8 @@ caminho = 'Exercicios/atividadesDia7/csv/LndbVMRT.csv'
 # Passando as informações do arquivo escolhido para uma variável chamada 'arquivo'
 arquivo = pd.read_csv(caminho, encoding='UTF-8', sep=',')
 
-# Exibir no terminal o que está dentro de 'arquivo' 
-print(arquivo)
+# Cria coluna "Movie_Year" em tempo de execução, juntando os dados movie e year
+arquivo.loc[:, "Movie_Year"] = arquivo["Movie"] + " " + arquivo["Year"].astype(str)
+
+# Exibe a coluna nova "Movie_Year"
+print(arquivo['Movie_Year'])

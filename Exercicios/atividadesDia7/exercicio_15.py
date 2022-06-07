@@ -7,5 +7,5 @@ caminho = 'Exercicios/atividadesDia7/csv/LndbVMRT.csv'
 # Passando as informações do arquivo escolhido para uma variável chamada 'arquivo'
 arquivo = pd.read_csv(caminho, encoding='UTF-8', sep=',')
 
-# Exibir no terminal o que está dentro de 'arquivo' 
-print(arquivo)
+# Exibir os nomes de todos os filmes exceto "The Revenant"
+print(arquivo.loc[(arquivo['Movie'] != "The Revenant"), ['Movie']])
