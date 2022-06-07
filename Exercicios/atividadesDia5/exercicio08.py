@@ -1,3 +1,6 @@
+# Material de referencia:
+#https://penseallen.github.io/PensePython2e/06-funcoes-result.html
+
 # Função que recebe os valores de entrada e os compara
 def questao8():
     X = int(input('Digite um valor inteiro: '))

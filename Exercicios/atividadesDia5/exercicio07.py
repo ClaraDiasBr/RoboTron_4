@@ -1,3 +1,6 @@
+# Material de referencia:
+#https://realpython.com/python-return-statement/
+
 # Função que recebe dois parametros inteiros e calcula a média
 def questao_7(x,y):
     soma7 = 0

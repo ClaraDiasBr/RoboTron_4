@@ -1,3 +1,8 @@
+# Material de referencia:
+# https://www.freecodecamp.org/portuguese/news/ler-arquivos-json-em-python-como-usar-load-loads-e-dump-dumps-com-arquivos-json/
+# https://pynative.com/python-json-load-and-loads-to-parse-json/#:~:text=Parameter%20used%3A-,The%20json.,document%20into%20the%20Python%20dictionary
+
+
 # Importa biblioteca json
 import json
 
