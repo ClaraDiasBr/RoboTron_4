@@ -1,4 +1,4 @@
-# 6 
+# função que recebe valores maiores que 2 e apresenta os números ímpares entre 0 e o valor digitado
 maiorQ2 = int(input('Digite um valor maior que 2: '))
 if maiorQ2 > 2:
     impar=[]

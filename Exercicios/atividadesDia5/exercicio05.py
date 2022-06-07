@@ -1,4 +1,4 @@
-# 5- 
+# Função que recebe 20 valores e calcula a média aritmética dos valores pares digitados
 def media_valores_pares():
     X = []
     par5=[]
@@ -13,4 +13,6 @@ def media_valores_pares():
             par5.append(valorDigitado)
     media5 = soma5/len(par5)
     print("Média dos valores pares é: ", media5)
+
+# Chama a função
 media_valores_pares()

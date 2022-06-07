@@ -1,4 +1,4 @@
-# 8- ARRUMAR!!!
+# Função que recebe os valores de entrada e os compara
 def questao8():
     X = int(input('Digite um valor inteiro: '))
     valor = X % 2
@@ -9,7 +9,7 @@ def questao8():
         print("O número é ímpar, sua tabuada é: ")
         tabuada(X)
         
-
+# Calcula fatorial
 def fatorial(X):
     resultado = 1
     for i in range(1,X+1):
@@ -17,12 +17,12 @@ def fatorial(X):
             fatorial = resultado
     return fatorial
 
+# Calcula tabuada
 def tabuada(X):
     resposta = 0
     for i in range(1,11):
             resposta = i * X
             print(i, ' x ', X, ' = ', resposta)
-    
-    
 
+#Chama a função
 questao8()
