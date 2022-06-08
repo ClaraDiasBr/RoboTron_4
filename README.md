@@ -8,3 +8,6 @@ Resolução das atividades com Python.
 - GitHub
 ### Linguagem
 - Python 3
+### Bibliotecas
+- JSON
+- Pandas 
