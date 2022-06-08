@@ -7,20 +7,6 @@ caminho = 'Exercicios/atividadesDia7/dados/tabelaPeriodica.csv'
 # Passando as informações do arquivo escolhido para uma variável chamada 'tabela_df'
 tabela_df = pd.read_csv(caminho, encoding='UTF-8', sep=',')
 
-# Função principal
-def main():
-    X = int(input('Escolha um dos itens a seguir: \n1- Mostrar os Símbolos da Tabela. \n2- Pesquise um elemento pelo Símbolo. \n3- Mostrar todos elementos disponíveis. \n0- Sair da aplicação.\n'))
-    if X == 1:
-        mostrar_simbolo()
-    if X == 2:
-        listar_dados()
-    if X == 3:
-        mostrar_tabela()
-    if X == 0:
-        sair()
-    else:
-        opcao_indisponivel()
-
 # Função para exibir os siímbolos da tabela periódica 
 def mostrar_simbolo():
     print(tabela_df.loc[:, ["Simbolo"]])
@@ -41,6 +27,20 @@ def sair():
 # Função para informar que o valor digitado está errado
 def opcao_indisponivel():
     print('Entre com um número válido!!!')
+
+# Função principal
+def main():
+    X = int(input('Escolha um dos itens a seguir: \n1- Mostrar os Símbolos da Tabela. \n2- Pesquise um elemento pelo Símbolo. \n3- Mostrar todos elementos disponíveis. \n0- Sair da aplicação.\n'))
+    if X == 1:
+        mostrar_simbolo()
+    elif X == 2:
+        listar_dados()
+    elif X == 3:
+        mostrar_tabela()
+    elif X == 0:
+        sair()
+    else:
+        opcao_indisponivel()
 
 main()
 
