@@ -1,6 +1,7 @@
 # Importando a biblioteca panda como pd
 import pandas as pd
 
+# Tabela Periódica disponibilizada pelo @CleoCordeiro
 # 'caminho' é a variável que recebe o path do arquivo .csv
 caminho = 'Exercicios/atividadesDia7/csv/LndbVMRT.csv'
 
