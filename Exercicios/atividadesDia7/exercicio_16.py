@@ -2,7 +2,7 @@
 import pandas as pd
 
 # 'caminho' é a variável que recebe o path do arquivo .csv
-caminho = 'Exercicios/atividadesDia7/dados/tabelaPeriodica.csv'
+caminho = 'Exercicios/atividadesDia7/csv/tabelaPeriodica.csv'
 
 # Passando as informações do arquivo escolhido para uma variável chamada 'tabela_df'
 tabela_df = pd.read_csv(caminho, encoding='UTF-8', sep=',')
