@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220617 10:42:41.765" rpa="false" schemaversion="3">
+<suite id="s1" name="Base" source="C:\Users\CLARA\OneDrive\Documentos\Recrutamentos\compass uol\Estagio\Sprints\4\RoboTron_Maria_Dias_Compass\Robotron\PROJETOBASICO\base.robot">
+<test id="s1-t1" name="Cenario: GET Todos os Usuarios 200" line="12">
+<kw name="Criar Sessao">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>serverest</arg>
+<arg>https://serverest.dev</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220617 10:42:41.858" level="INFO">Creating Session using : alias=serverest, url=https://serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220617 10:42:41.858" endtime="20220617 10:42:41.859"/>
+</kw>
+<status status="PASS" starttime="20220617 10:42:41.857" endtime="20220617 10:42:41.859"/>
+</kw>
+<kw name="GET Endpoint /usuarios">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/usuarios</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220617 10:42:42.693" level="INFO">GET Request : url=https://serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.28.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220617 10:42:42.693" level="INFO">GET Response : url=https://serverest.dev/usuarios 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '834d37f1-fd5a-4516-bca2-6e9476978ef1', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '4bdf5811966feb35c85e53f80ea41205', 'Date': 'Fri, 17 Jun 2022 13:42:43 GMT', 'Server': 'Google Frontend', 'Content-Length': '5785'} 
+ body={
+    "quantidade": 26,
+    "usuarios": [
+        {
+            "nome": "Fulano da Silva",
+            "email": "fulano@qa.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "0uxuPY0cbmQhpEz1"
+        },
+        {
+            "nome": "Merle Brown",
+            "email": "Amalia.Rutherford@hotmail.com",
+            "password": "EUgkdhjT6sYdrKt",
+            "administrador": "true",
+            "_id": "217SJrSk3U8NJf9W"
+        },
+        {
+            "nome": "Spencer Hyatt",
+            "email": "Frederick_Lubowitz10@gmail.com",
+            "password": "0bKVOoBtZ3q3sd4",
+            "administrador": "true",
+            "_id": "4j4mpNyncEQmZ9g1"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "Bonnie75@hotmail.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "75J511LL9uSo2yZE"
+        },
+        {
+            "nome": "Patsy Schumm",
+            "email": "Jeanette.Jenkins@gmail.com",
+            "password": "BCuMlvlc9KVc5tW",
+            "administrador": "true",
+            "_id": "8HqLP1fej6l22IL9"
+        },
+        {
+            "nome": "Dr. Adenisio Carvalho",
+            "email": "Lidiana.Xavier48@gmail.com",
+            "password": "g_n70ltKGe5BPcs",
+            "administrador": "true",
+            "_id": "9mLBkLvytiCayu0s"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "Manuela58@hotmail.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "Eo5ghqctLeX7xxZF"
+        },
+        {
+            "nome": "Mr. Kristina Klocko",
+            "email": "Giovani_Lockman@hotmail.com",
+            "password": "V62_GEULrJRhcxG",
+            "administrador": "false",
+            "_id": "JFqLxeGhy5X2gWEQ"
+        },
+        {
+            "nome": "Marta Franco",
+            "email": "Josue.Silva89@live.com",
+            "password": "eE911QtMrtcQzqZ",
+            "administrador": "true",
+            "_id": "KVH32MijdfZ1OevF"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "Burdette69@gmail.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "LLDp4oNMlKUazSzO"
+        },
+        {
+            "nome": "Leandra Braga",
+            "email": "Joseilda40@yahoo.com",
+            "password": "KdHGMwvN1HyEjSa",
+            "administrador": "true",
+            "_id": "OHu3CHmtQOmHxQqS"
+        },
+        {
+            "nome": "Leticia Rogahn",
+            "email": "Demetris_Hand@gmail.com",
+            "password": "uLX9mKGbF9qVeS0",
+            "administrador": "true",
+            "_id": "Pc6B88WivsF76jR6"
+        },
+        {
+            "nome": "Dr. Theodore Schmeler",
+            "email": "Maxwell31@hotmail.com",
+            "password": "sqj8TQaTkMObXVh",
+            "administrador": "false",
+            "_id": "RyRy3Um2hZ8hphwC"
+        },
+        {
+            "nome": "Sally Krajcik V",
+            "email": "Brianne55@yahoo.com",
+            "password": "6wnBfWi7NTfH5go",
+            "administrador": "true",
+            "_id": "T4bgvgLlan4prFNe"
+        },
+        {
+            "nome": "Tamara Sporer",
+            "email": "Mallory_Veum@gmail.com",
+            "password": "F7ztWRdO1mf_9Qy",
+            "administrador": "true",
+            "_id": "W9OsUoPMhGzR5GzQ"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "German57@hotmail.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "WM1Ul2YYGa0pnTEd"
+        },
+        {
+            "nome": "Ms. Marcella McLaughlin",
+            "email": "Dayna39@yahoo.com",
+            "password": "1PZcKJZfbbIhx0X",
+            "administrador": "true",
+            "_id": "iTJHGwHy08SwdPZ1"
+        },
+        {
+            "nome": "Paulo",
+            "email": "paulo@qa.com.br",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "kEpPjy6vl8o9Cs7F"
+        },
+        {
+            "nome": "Edith Torp",
+            "email": "Ava.Metz0@gmail.com",
+            "password": "myv5sHcefRXCsKA",
+            "administrador": "true",
+            "_id": "lj81hVnUaTz0OFxC"
+        },
+        {
+            "nome": "fulano Usuário",
+            "email": "Halle.Jakubowski@gmail.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "m17Vk4wkOQoa2res"
+        },
+        {
+            "nome": "Ernande Albuquerque",
+            "email": "Jozue57@live.com",
+            "password": "VpVk9P0J0R3yUc_",
+            "administrador": "true",
+            "_id": "mZvUu5pAFDcTktIh"
+        },
+        {
+            "nome": "Rodney MacGyver",
+            "email": "Camilla.Okuneva6@hotmail.com",
+            "password": "iGf3f5eeGSQt3KC",
+            "administrador": "true",
+            "_id": "ofZKFTFiskUynaZT"
+        },
+        {
+            "nome": "fulano Usuário",
+            "email": "Chanelle56@gmail.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "sEEda9o7mty9vNpy"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "Lonnie77@yahoo.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "yIEXwRTmrquv7KGA"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "Donald_Krajcik77@gmail.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "zKufyKr4Vwfnt24s"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "Lemuel.Turcotte16@gmail.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "zQJSVfTK1EOFRaKb"
+        }
+    ]
+} 
+ </msg>
+<msg timestamp="20220617 10:42:42.694" level="INFO">C:\Users\CLARA\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:1043: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220617 10:42:42.694" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220617 10:42:41.859" endtime="20220617 10:42:42.694"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220617 10:42:42.695" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220617 10:42:42.694" endtime="20220617 10:42:42.695"/>
+</kw>
+<status status="PASS" starttime="20220617 10:42:41.859" endtime="20220617 10:42:42.695"/>
+</kw>
+<kw name="Validar Status Code &quot;200&quot;" sourcename="Validar Status Code &quot;${statuscode}&quot;">
+<kw name="Should Be True" library="BuiltIn">
+<arg>${response.status_code} == ${statuscode}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220617 10:42:42.696" endtime="20220617 10:42:42.697"/>
+</kw>
+<status status="PASS" starttime="20220617 10:42:42.696" endtime="20220617 10:42:42.697"/>
+</kw>
+<status status="PASS" starttime="20220617 10:42:41.857" endtime="20220617 10:42:42.698"/>
+</test>
+<doc>Arquivo simples para requisições HTTP em APIs REST</doc>
+<status status="PASS" starttime="20220617 10:42:41.767" endtime="20220617 10:42:42.699"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Base">Base</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
