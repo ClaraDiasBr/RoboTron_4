@@ -5,6 +5,9 @@ Library         RequestsLibrary
 
 #Sessão para setagem de variáveis para utilização
 * Variables *
+${nome_do_usuario}          tony stark
+${senha_do_usuario}         test123
+${email_do_usuario}         tony.stark@gmail.com
 
 
 #Sessão para criação dos cenários de teste
@@ -39,7 +42,7 @@ Cenario: DELETE Usuario 200
 #Sessão para criação de Keywords Personalizados
 * Keywords *
 Criar Sessao
-    Create Session       serverest       http://localhost:3000/
+    Create Session       serverest       http://localhost:3000
 
 GET Endpoint /usuarios
     ${response}             GET On Session      serverest       /usuarios
@@ -47,7 +50,7 @@ GET Endpoint /usuarios
 
 
 POST Endpoint /usuarios
-    &{payload}              Create Dictionary     nome=jubas6 priest     email=testenul6@exemplo.com      password=123    administrador=true
+    &{payload}              Create Dictionary     nome=${nome_do_usuario}     email=${email_do_usuario}      password=${senha_do_usuario}    administrador=true
     ${response}             POST On Session      serverest       /usuarios      data=&{payload}
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
