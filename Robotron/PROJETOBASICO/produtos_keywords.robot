@@ -1,14 +1,30 @@
 * Settings *
 Documentation       Keywords e Variaveis para ações do endpoint /produtos
 
-#Sessão para setagem de variáveis para utilização
-* Variables *
-${token_auth}           Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNjU1ODk5NjI3LCJleHAiOjE2NTU5MDAyMjd9.qSAQjeCK-lXK2p5WtnvdtSYNCaCBhSAY4gMJ6x71ess
+
 
 * Keywords *
 POST Endpoint /produtos
     &{header}               Create Dictionary     Authorization=${token_auth}
-    &{payload}              Create Dictionary     nome=MouseTech    preco=100   descricao=Mouse     quantidade=550 
+    &{payload}              Create Dictionary     nome=Processador    preco=100   descricao=i9     quantidade=550 
     ${response}             POST On Session       serverest       /produtos      data=&{payload}    headers=${header}
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
+
+DELETE Endpoint /produtos
+    &{header}               Create Dictionary     Authorization=${token_auth} 
+    ${response}             DELETE On Session       serverest       /produtos/${id_produto}         headers=${header}
+    Log to Console          Response: ${response.content}
+    Set Global Variable     ${response}
+
+Validar Ter Criado Produto
+    Should be Equal         ${response.json()["message"]}               Cadastro realizado com sucesso
+    Should Not Be Empty     ${response.json()["_id"]} 
+
+Criar Produto e Armazenar ID
+  POST Endpoint /produtos
+  Validar Ter Criado Produto
+  ${id_produto}             Set Variable        ${response.json()["_id"]}
+  Log to Console          Response: ${id_produto}
+  Set Global Variable     ${id_produto}
+
