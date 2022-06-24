@@ -1,0 +1,26 @@
+{
+  "user_valido":{
+    "nome": "James Good",
+    "email": "jamesgood@qa.com.br",
+    "password": "teste",
+    "administrador": "true"
+  },
+  "user_invalido":{
+    "nome": "Invalido tester",
+    "email": "fulano@qa.com.br",
+    "password": "teste",
+    "administrador": "true"
+  },
+  "user_sem_senha":{
+    "nome": "Ian Something",
+    "email": "ians@qa.com.br",
+    "password": "",
+    "administrador": "true"
+  },
+  "user_sem_email":{
+    "nome": "Harry Potter",
+    "email": "",
+    "password": "teste",
+    "administrador": "true"
+  }
+}

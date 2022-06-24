@@ -8,6 +8,7 @@ Resource        ./produtos_keywords.robot
 
 #Sessão para criação dos cenários de teste
 * Test Cases *
+#Cenario Usuarios
 Cenario: GET Todos os Usuarios 200
     [tags]      GET
     Criar Sessao
@@ -35,12 +36,19 @@ Cenario: DELETE Usuario 200
     DELETE Endpoint /usuarios
     Validar Status Code "200"
 
+Cenario: POST Criar Usuario de Massa Estatica 201
+    [tags]  POSTCRIARUSUARIOESTATICO
+    Criar Sessao
+    Criar Usuario Estatico Valido
+    Validar Status Code "201"
+
+# Cenario Login
 Cenario: POST Realizar Login 200
     [tags]      POSTLOGIN
     Criar Sessao
     POST Endpoint /login
     Validar Status Code "200"
-
+# Cenario Produtos
 Cenario: POST Criar Produto
     [tags]      POSTPRODUTO
     Criar Sessao
@@ -60,15 +68,3 @@ Cenario: DELETE Excluir Produto 200
 * Keywords *
 Criar Sessao
     Create Session       serverest       http://localhost:3000
-
-Validar Status Code "${statuscode}"
-    Should Be True          ${response.status_code} == ${statuscode}
-
-Validar Quantidade "${quantidade}"
-    Should Be Equal     ${response.json()["quantidade"]}        ${quantidade}
-
-Validar Se Mensagem Contem "${palavra}"
-    Should Contain      ${response.json()["message"]}           ${palavra}
-
-Printar Conteudo Response
-    Log To Console      Response: ${response.json()["usuarios"][0]["nome"]}
