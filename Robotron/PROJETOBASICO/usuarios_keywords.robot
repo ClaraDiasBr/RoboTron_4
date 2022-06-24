@@ -7,6 +7,7 @@ Resource            ./common.robot
 ${nome_do_usuario}          tony stark
 ${senha_do_usuario}         test123
 ${email_do_usuario}         tony.stark@gmail.com
+${id_do_usuario}            9Ma0mdfiQO8Gd3st
 
 
 * Keywords *
@@ -46,3 +47,20 @@ Criar Usuario Estatico Valido
     ${payload}              Set Variable    ${json["user_valido"]}
     Set Global Variable     ${payload}
     POST Endpoint /usuarios
+
+Buscar Usuario por ID
+    ${response}             GET On Session      serverest       /usuarios/${id_do_usuario}
+    Log to Console          Response: ${response.content}
+    Set Global Variable     ${response}
+
+POST Invalido Endpoint /usuarios
+   # &{payload}              Create Dictionary     nome=${nome_do_usuario}     email=${email_do_usuario}      password=${senha_do_usuario}    administrador=true
+    ${response}             POST On Session      serverest       /usuarios      json=&{payload}     expected_status=400
+    Log to Console          Response: ${response.content}
+    Set Global Variable     ${response}
+
+Criar Usuario Estatico Invalido
+    ${json}                 Importar JSON Estatico  json_usuario_ex.json
+    ${payload}              Set Variable    ${json["user_invalido"]}
+    Set Global Variable     ${payload}
+    POST Invalido Endpoint /usuarios

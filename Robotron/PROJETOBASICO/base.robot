@@ -14,7 +14,7 @@ Cenario: GET Todos os Usuarios 200
     Criar Sessao
     GET Endpoint /usuarios
     Validar Status Code "200"
-    Validar Quantidade "${5}"
+    Validar Quantidade "${6}"
     Printar Conteudo Response
 
 Cenario: POST Cadastrar Usuario 201
@@ -37,10 +37,22 @@ Cenario: DELETE Usuario 200
     Validar Status Code "200"
 
 Cenario: POST Criar Usuario de Massa Estatica 201
-    [tags]  POSTCRIARUSUARIOESTATICO
+    [tags]      POSTCRIARUSUARIOESTATICO
     Criar Sessao
     Criar Usuario Estatico Valido
     Validar Status Code "201"
+
+Cenario: Buscar Usuario por ID
+    [tags]  GETUSERID
+    Criar Sessao
+    Buscar Usuario por ID
+    Validar Status Code "200"
+
+Cenario: POST Criar Usuario Invalido de Massa Estatica 400
+    [tags]  POSTCRIARUSERINVALIDO
+    Criar Sessao
+    Criar Usuario Estatico Invalido
+    Validar Status Code "400"
 
 # Cenario Login
 Cenario: POST Realizar Login 200
