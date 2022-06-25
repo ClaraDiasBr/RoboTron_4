@@ -3,8 +3,6 @@
 Documentation   Arquivo simples para requisições HTTP em APIs REST
 Library         RequestsLibrary
 Resource        keywords/usuarios_keywords.robot
-Resource        keywords/login_keywords.robot
-Resource        keywords/produtos_keywords.robot
 
 #Sessão para criação dos cenários de teste
 * Test Cases *
@@ -14,7 +12,7 @@ Cenario: GET Todos os Usuarios 200
     Criar Sessao
     GET Endpoint /usuarios
     Validar Status Code "200"
-    Validar Quantidade "${6}"
+    Validar Quantidade "${7}"
     Printar Conteudo Response
 
 Cenario: POST Cadastrar Usuario 201
@@ -41,39 +39,35 @@ Cenario: POST Criar Usuario de Massa Estatica 201
     Criar Sessao
     Criar Usuario Estatico Valido
     Validar Status Code "201"
-
+#####################################################
 Cenario: Buscar Usuario por ID
     [tags]  GETUSERID
     Criar Sessao
     Buscar Usuario por ID
     Validar Status Code "200"
 
-Cenario: POST Criar Usuario Invalido de Massa Estatica 400
+Cenario: Buscar Usuario Nao Cadastrado por ID
+    [tags]  GETUSERIDNAOCADASTRADO
+    Criar Sessao
+    Buscar Usuario Nao Cadastrado por ID
+    Validar Status Code "400"
+
+Cenario: POST Criar Usuario Invalido 400
     [tags]  POSTCRIARUSERINVALIDO
     Criar Sessao
     Criar Usuario Estatico Invalido
     Validar Status Code "400"
 
-# Cenario Login
-Cenario: POST Realizar Login 200
-    [tags]      POSTLOGIN
+Cenario: POST Criar Usuario Sem Senha 400
+    [tags]  POSTCRIARUSERSEMSENHA
     Criar Sessao
-    POST Endpoint /login
-    Validar Status Code "200"
-# Cenario Produtos
-Cenario: POST Criar Produto
-    [tags]      POSTPRODUTO
-    Criar Sessao
-    Fazer login e Armazenar Token
-    POST Endpoint /produtos
-    Validar Status Code "201"
+    Criar Usuario Estatico Sem Senha
+    Validar Status Code "400"
 
-Cenario: DELETE Excluir Produto 200
-    [tags]  DELETEPRODUTO
+Cenario: POST Criar Usuario Sem Email 400
+    [tags]  POSTCRIARUSERSEMEMAIL
     Criar Sessao
-    Fazer Login e Armazenar Token
-    Criar Produto e Armazenar ID
-    DELETE Endpoint /produtos
-    Validar Status Code "200"
+    Criar Usuario Estatico Sem Email
+    Validar Status Code "400"
 
 
