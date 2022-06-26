@@ -42,3 +42,5 @@ Cenario: DELETE Excluir Carrinho
     DELETE Endpoint /carrinhos/cancelar-compra
     Validar Status Code "200"
 
+
+

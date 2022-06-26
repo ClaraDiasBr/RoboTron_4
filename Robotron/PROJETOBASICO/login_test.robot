@@ -7,6 +7,7 @@ Resource        keywords/login_keywords.robot
 #Sessão para criação dos cenários de teste
 * Test Cases *
 # Cenario Login
+
 Cenario: POST Realizar Login 200
     [tags]      POSTLOGIN
     Criar Sessao

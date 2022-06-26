@@ -75,5 +75,5 @@ Cenario: POST User NAO Admin
     Criar Sessao
     Criar Usuario Estatico Nao Admin
     Validar Status Code "201"
-#Criar Cenario com carrinho
+
 

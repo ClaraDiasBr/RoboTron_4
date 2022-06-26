@@ -50,3 +50,6 @@ Cenario: GET Produtos Id
     Criar Sessao
     GET ID Endpoint /produtos
     Validar Status Code "200"
+#### Falta cenario DELETE para o Status Code 403
+#### Falta cenario com o PUT
+#### Cenario Triste GET Produtos Id
