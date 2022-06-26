@@ -12,7 +12,7 @@ Cenario: GET Todos os Usuarios 200
     Criar Sessao
     GET Endpoint /usuarios
     Validar Status Code "200"
-    Validar Quantidade "${7}"
+    Validar Quantidade "${9}"
     Printar Conteudo Response
 
 Cenario: POST Cadastrar Usuario 201
@@ -70,4 +70,10 @@ Cenario: POST Criar Usuario Sem Email 400
     Criar Usuario Estatico Sem Email
     Validar Status Code "400"
 
+Cenario: POST User NAO Admin
+    [tags]  POSTUSERNAOADMIN
+    Criar Sessao
+    Criar Usuario Estatico Nao Admin
+    Validar Status Code "201"
+#Criar Cenario com carrinho
 

@@ -22,5 +22,12 @@
     "email": "",
     "password": "teste",
     "administrador": "true"
+  },
+  "user_nao_admin":{
+    "nome": "Jake the Dog",
+    "email": "jake.the.dog@qa.com",
+    "password": "teste",
+    "administrador": "false"
   }
+
 }

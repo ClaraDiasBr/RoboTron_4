@@ -41,7 +41,7 @@ Validar Se Mensagem Contem "${palavra}"
     Should Contain      ${response.json()["message"]}           ${palavra}
 
 Printar Conteudo Response
-    Log To Console      Response: ${response.json()["usuarios"][0]["nome"]}
+    Log To Console      Response: ${response.json()["usuarios"]}
 
 Criar Usuario Estatico Valido
     ${json}                 Importar JSON Estatico  json_usuario_ex.json
@@ -82,3 +82,9 @@ Criar Usuario Estatico Sem Email
     ${payload}              Set Variable    ${json["user_sem_email"]}
     Set Global Variable     ${payload}
     POST Invalido Endpoint /usuarios
+
+Criar Usuario Estatico Nao Admin
+    ${json}                 Importar JSON Estatico  json_usuario_ex.json
+    ${payload}              Set Variable    ${json["user_nao_admin"]}
+    Set Global Variable     ${payload}
+    POST Endpoint /usuarios
