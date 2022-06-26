@@ -4,7 +4,7 @@ Resource            ./common.robot
 
 #Sessão para setagem de variáveis para utilização
 * Variables *
-${id_carrinho}     qbMqntef4iTOwWfg
+${id_carrinho}     81VM57V1xP5aSoN7
 
 * Keywords *
 
@@ -23,18 +23,21 @@ Criar Carrinho Valido
     ${payload}              Set Variable     ${produtos}
     Set Global Variable     ${payload}
 
-# Criar Carrinho Valido
-#     ${produtos}                 Importar JSON Estatico  json_carrinho.json
-#     ${produtos}=   Evaluate      json.dumps(${produtos})     json
-#     #Set Test Variable       ${lista_produtos}    ${produtos["produtos"]}
-#     ${payload}              Set Variable     ${produtos}
-#     Set Global Variable     ${payload} 
-
 POST Endpoint /carrinhos
     Criar Carrinho Valido
     &{header}               Create Dictionary     Authorization=${token_auth}  Content-Type=application/json
     ${response}             POST On Session       serverest       /carrinhos      json=${payload}    headers=${header}   
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
- 
-    
+
+DELETE Endpoint /carrinhos/concluir-compra
+    &{header}               Create Dictionary     Authorization=${token_auth}  Content-Type=application/json
+    ${response}             DELETE On Session       serverest       /carrinhos/concluir-compra     headers=${header}
+    Log to Console          Response: ${response.content}
+    Set Global Variable     ${response}
+
+DELETE Endpoint /carrinhos/cancelar-compra
+    &{header}               Create Dictionary     Authorization=${token_auth}  Content-Type=application/json
+    ${response}             DELETE On Session       serverest       /carrinhos/cancelar-compra     headers=${header}
+    Log to Console          Response: ${response.content}
+    Set Global Variable     ${response}

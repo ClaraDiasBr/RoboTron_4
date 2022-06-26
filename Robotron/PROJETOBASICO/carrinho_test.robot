@@ -21,10 +21,24 @@ Cenario: POST Cadastrar Carrinho
     Fazer login e Armazenar Token
     POST Endpoint /carrinhos
     Validar Status Code "201"
+
 Cenario: GET Buscar Carrinho por ID
     [tags]   GETID
     Criar Sessao
     GET Endpoint /carrinhos ID
     Validar Status Code "200"
 
+Cenario: DELETE Concluir Compra
+    [tags]     CONCLUIRCOMPRA
+    Criar Sessao
+    Fazer login e Armazenar Token
+    DELETE Endpoint /carrinhos/concluir-compra
+    Validar Status Code "200"
+
+Cenario: DELETE Excluir Carrinho
+    [tags]     EXCLUIRCAR
+    Criar Sessao
+    Fazer login e Armazenar Token
+    DELETE Endpoint /carrinhos/cancelar-compra
+    Validar Status Code "200"
 

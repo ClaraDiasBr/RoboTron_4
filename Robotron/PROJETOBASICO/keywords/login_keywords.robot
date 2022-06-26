@@ -4,8 +4,8 @@ Resource            ./common.robot
 
 #Sessão para setagem de variáveis para utilização
 * Variables *
-${email_para_login}         fulano@qa.com
-${password_para_login}      teste
+${email_para_login}         testenul5@exemplo.com
+${password_para_login}      123
 ${email_nao_admin}          jake.the.dog@qa.com
 ${password_nao_admin}       teste
 
