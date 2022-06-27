@@ -16,7 +16,8 @@ Response: [
 {'nome': 'jubas6 priest', 'email': 'testenul6@exemplo.com', 'password': '123', 'administrador': 'true', '_id': 'CVtOifLfJfYXpZ50'}, 
 {'nome': '5 priest', 'email': 'testeiuq5@exemplo.com', 'password': '123', 'administrador': 'true', '_id': 'YDwgzPU8CnGu5yzN'}
 {'nome': 'Jake the Dog', 'email': 'jake.the.dog@qa.com', 'password': 'teste', 'administrador': 'false', '_id': 'AqoX7CPy3kJbx1vl'}
-{'nome': 'Jake the DogS', 'email': 'jake.the.doSg@qa.com', 'password': 'teste', 'administrador': 'false', '_id': '39OGwZ46ZdsHfqbc'}]
+{'nome': 'Jake the DogS', 'email': 'jake.the.doSg@qa.com', 'password': 'teste', 'administrador': 'false', '_id': '39OGwZ46ZdsHfqbc'}
+{'nome': 'Valido tester', 'email': 'fulano@qa.com.br', 'password': 'teste', 'administrador': 'true', '_id': 'FwgIw7mrb7PET19M'}]
 
 CARRINHOS:
 "_id": "7XWVORaVHOBBMoDP"

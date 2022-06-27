@@ -11,10 +11,12 @@ Cobertura do Teste:
     
     - Status Code Coverage:
         - Total: 38
-        - Realizado: 19
+        - Realizado: 20
         - Cobertura: 50%
 
 Falta implementadar:
+    - Login:
+        Cenario Triste POST Login --OK
     - Carrinho:
         Cenario Triste POST Cadastrar Carrinho
         Cenario Triste GET Buscar Carrinho por ID
@@ -30,13 +32,12 @@ Falta implementadar:
         Falta cenario DELETE para o Status Code 403
         Falta cenario com o PUT
         Cenario Triste GET Produtos Id
-    - Login:
-        Cenario Triste POST Login
+
 
     * Automatizar os dados;
     * Automatizar algumas respostas;
         - principalmente o id do carrinho.
-        
+
 ** Resposta não documentada na API:
     - Status Code 500 erro no server
         "Adicione aspas em todos os valores. Esse problema já está sendo investigado".

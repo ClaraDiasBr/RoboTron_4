@@ -2,9 +2,9 @@
 Documentation       Keywords e Variaveis para ações do endpoint /carrinhos
 Resource            ./common.robot
 
-#Sessão para setagem de variáveis para utilização
+#Sessão para setar variáveis para utilização
 * Variables *
-${id_carrinho}     81VM57V1xP5aSoN7
+${id_carrinho_fixo}     qbMqntef4iTOwWfg
 
 * Keywords *
 
@@ -14,7 +14,7 @@ GET Endpoint /carrinhos
     Set Global Variable     ${response}
 
 GET Endpoint /carrinhos ID
-    ${response}             GET On Session       serverest       /carrinhos/${id_carrinho}
+    ${response}             GET On Session       serverest       /carrinhos/${id_carrinho_fixo}
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
 

@@ -38,6 +38,7 @@ Cenario: POST Criar Usuario de Massa Estatica 201
     [tags]      POSTCRIARUSUARIOESTATICO
     Criar Sessao
     Criar Usuario Estatico Valido
+    POST Endpoint /usuarios
     Validar Status Code "201"
 #####################################################
 Cenario: Buscar Usuario por ID
@@ -52,28 +53,32 @@ Cenario: Buscar Usuario Nao Cadastrado por ID
     Buscar Usuario Nao Cadastrado por ID
     Validar Status Code "400"
 
-Cenario: POST Criar Usuario Invalido 400
-    [tags]  POSTCRIARUSERINVALIDO
+Cenario: POST Criar Usuario Invalido Sem nome 400
+    [tags]  POSTCRIARUSERSEMNOME
     Criar Sessao
-    Criar Usuario Estatico Invalido
+    Criar Usuario Estatico Invalido Sem Nome
+    POST Invalido Endpoint /usuarios
     Validar Status Code "400"
 
 Cenario: POST Criar Usuario Sem Senha 400
     [tags]  POSTCRIARUSERSEMSENHA
     Criar Sessao
     Criar Usuario Estatico Sem Senha
+    POST Invalido Endpoint /usuarios
     Validar Status Code "400"
 
 Cenario: POST Criar Usuario Sem Email 400
     [tags]  POSTCRIARUSERSEMEMAIL
     Criar Sessao
     Criar Usuario Estatico Sem Email
+    POST Invalido Endpoint /usuarios
     Validar Status Code "400"
 
 Cenario: POST User NAO Admin
     [tags]  POSTUSERNAOADMIN
     Criar Sessao
     Criar Usuario Estatico Nao Admin
+    POST Endpoint /usuarios
     Validar Status Code "201"
 
 

@@ -16,16 +16,21 @@ GET Endpoint /usuarios
     ${response}             GET On Session      serverest       /usuarios
     Set Global Variable     ${response}
 
-
 POST Endpoint /usuarios
    # &{payload}              Create Dictionary     nome=${nome_do_usuario}     email=${email_do_usuario}      password=${senha_do_usuario}    administrador=true
     ${response}             POST On Session      serverest       /usuarios      json=&{payload}
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
 
+POST Invalido Endpoint /usuarios
+   # &{payload}              Create Dictionary     nome=${nome_do_usuario}     email=${email_do_usuario}      password=${senha_do_usuario}    administrador=true
+    ${response}             POST On Session      serverest       /usuarios      json=&{payload}     expected_status=400
+    Log to Console          Response: ${response.content}
+    Set Global Variable     ${response}
+
 PUT Endpoint /usuarios
-    &{payload}              Create Dictionary     nome=5 priest     email=testeiuq5@exemplo.com      password=123    administrador=true
-    ${response}             PUT On Session      serverest       /usuarios/YDwgzPU8CnGu5yzN      data=&{payload}
+    &{payload}              Create Dictionary     nome=Valido tester     email=fulano@qa.com.br      password=teste    administrador=true
+    ${response}             PUT On Session      serverest       /usuarios/FwgIw7mrb7PET19M      data=&{payload}
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
 
@@ -43,12 +48,6 @@ Validar Se Mensagem Contem "${palavra}"
 Printar Conteudo Response
     Log To Console      Response: ${response.json()["usuarios"]}
 
-Criar Usuario Estatico Valido
-    ${json}                 Importar JSON Estatico  json_usuario_ex.json
-    ${payload}              Set Variable    ${json["user_valido"]}
-    Set Global Variable     ${payload}
-    POST Endpoint /usuarios
-
 Buscar Usuario por ID
     ${response}             GET On Session      serverest       /usuarios/${id_do_usuario}
     Log to Console          Response: ${response.content}
@@ -59,32 +58,28 @@ Buscar Usuario Nao Cadastrado por ID
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
 
-POST Invalido Endpoint /usuarios
-   # &{payload}              Create Dictionary     nome=${nome_do_usuario}     email=${email_do_usuario}      password=${senha_do_usuario}    administrador=true
-    ${response}             POST On Session      serverest       /usuarios      json=&{payload}     expected_status=400
-    Log to Console          Response: ${response.content}
-    Set Global Variable     ${response}
-
-Criar Usuario Estatico Invalido
+Criar Usuario Estatico Valido
     ${json}                 Importar JSON Estatico  json_usuario_ex.json
-    ${payload}              Set Variable    ${json["user_invalido"]}
-    Set Global Variable     ${payload}
-    POST Invalido Endpoint /usuarios
+    ${payload}              Set Variable    ${json["user_valido"]}
+    Set Global Variable     ${payload}   
+
+Criar Usuario Estatico Invalido Sem Nome
+    ${json}                 Importar JSON Estatico  json_usuario_ex.json
+    ${payload}              Set Variable    ${json["user_sem_nome"]}
+    Set Global Variable     ${payload}   
 
 Criar Usuario Estatico Sem Senha
     ${json}                 Importar JSON Estatico  json_usuario_ex.json
     ${payload}              Set Variable    ${json["user_sem_senha"]}
-    Set Global Variable     ${payload}
-    POST Invalido Endpoint /usuarios
+    Set Global Variable     ${payload}   
 
 Criar Usuario Estatico Sem Email
     ${json}                 Importar JSON Estatico  json_usuario_ex.json
     ${payload}              Set Variable    ${json["user_sem_email"]}
     Set Global Variable     ${payload}
-    POST Invalido Endpoint /usuarios
 
 Criar Usuario Estatico Nao Admin
     ${json}                 Importar JSON Estatico  json_usuario_ex.json
     ${payload}              Set Variable    ${json["user_nao_admin"]}
     Set Global Variable     ${payload}
-    POST Endpoint /usuarios
+    

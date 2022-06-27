@@ -4,6 +4,7 @@ Resource            ./common.robot
 
 #Sessão para setagem de variáveis para utilização
 * Variables *
+${email_vazio}              
 ${email_para_login}         testenul5@exemplo.com
 ${password_para_login}      123
 ${email_nao_admin}          jake.the.dog@qa.com
@@ -16,12 +17,17 @@ POST Endpoint /login
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
 
+POST Sem Email Endpoint /login
+    &{payload}              Create Dictionary     email=${email_vazio}      password=${password_para_login} 
+    ${response}             POST On Session      serverest       /login      data=&{payload}  expected_status=400
+    Log to Console          Response: ${response.content}
+    Set Global Variable     ${response}
+
 POST Nao Admin Endpoint /login
     &{payload}              Create Dictionary     email=${email_nao_admin}      password=${password_nao_admin} 
     ${response}             POST On Session      serverest       /login      data=&{payload}    
     Log to Console          Response: ${response.content}
     Set Global Variable     ${response}
-
 
 Validar Ter Logado
     Should be Equal         ${response.json()["message"]}               Login realizado com sucesso
