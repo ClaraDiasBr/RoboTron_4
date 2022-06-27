@@ -1,4 +1,9 @@
 Cobertura do Teste:
+    - Endpoints:
+        - login
+        - usuarios
+        - produtos
+        - carrinhos
     - Path Coverage:
         - Total: 09
         - Realizado: 09
@@ -12,9 +17,9 @@ Cobertura do Teste:
     - Status Code Coverage:
         - Total: 38
         - Realizado: 20
-        - Cobertura: 50%
+        - Cobertura: 52%
 
-Falta implementadar:
+Falta implementar:
     - Login:
         Cenario Triste POST Login --OK
     - Carrinho:
@@ -36,7 +41,11 @@ Falta implementadar:
 
     * Automatizar os dados;
     * Automatizar algumas respostas;
-        - principalmente o id do carrinho.
+        - principalmente buscar carrinho por ID;
+        - Automatizar criação de:
+            - Usuarios;
+            - Produtos;
+            - Carrinhos.
 
 ** Resposta não documentada na API:
     - Status Code 500 erro no server
