@@ -1,4 +1,4 @@
-# Challenge da Sprint 4 - Compass.uol
+# Challenge da Sprint 4
 
 ## Sobre o Projeto
 Resolução das atividades com Python.
